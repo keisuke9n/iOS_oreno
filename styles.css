@@ -1,0 +1,70 @@
+/* 俺の血圧 - Landing Page Styles */
+:root{
+  --bg:#0c0f14;
+  --fg:#e9edf1;
+  --muted:#9aa6b2;
+  --accent:#22c55e; /* green-500 */
+  --accent-2:#16a34a; /* green-600 */
+  --card:#121722;
+  --chip:#0f1520;
+  --border:#1f2a37;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Hiragino Sans","Noto Sans CJK JP","Yu Gothic UI","YuGothic","Meiryo",sans-serif;
+  background: radial-gradient(1200px 600px at 80% -20%, #1a2332 0%, var(--bg) 60%);
+  color:var(--fg);
+}
+a{color:var(--fg);text-decoration:none}
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header{position:sticky;top:0;background:rgba(12,15,20,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{display:flex;gap:10px;align-items:center}
+.logo .app{font-weight:800}
+.logo .dev{font-size:.85rem;color:var(--muted)}
+.links{display:flex;gap:16px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:var(--accent);color:#0c0f14;font-weight:700}
+.btn:hover{background:var(--accent-2)}
+
+/* Hero */
+.hero{padding:64px 0 36px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+.hero h1{font-size:2.2rem;margin:.2rem 0}
+.hero p{color:var(--muted);line-height:1.8}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.badge{font-size:.8rem;padding:6px 10px;border-radius:999px;background:var(--chip);border:1px solid var(--border);color:var(--muted)}
+.phone{border-radius:22px;overflow:hidden;border:1px solid var(--border);box-shadow:0 10px 40px rgba(0,0,0,.35);background:linear-gradient(180deg,#0e1420,#0b1018)}
+.emoji-panel{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:360px}
+.emoji-panel .emoji{font-size:48px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.25))}
+
+/* Features */
+.features{padding:24px 0 12px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px}
+.card h3{margin:.4rem 0 0}
+.card p{color:var(--muted);font-size:.95rem;line-height:1.7}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:var(--chip);color:var(--muted);font-size:.8rem}
+
+/* Gallery */
+.gallery{padding:18px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.emoji-card{display:flex;flex-direction:column;align-items:center;gap:8px;justify-content:center;min-height:160px}
+.emoji-card .big{font-size:42px}
+.emoji-card .label{color:var(--muted);font-size:.9rem}
+
+/* Footer */
+footer{padding:28px 0;border-top:1px solid var(--border);color:var(--muted)}
+footer .row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+footer a{color:var(--muted)}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr;}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .features{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  .hero h1{font-size:1.8rem}
+}
